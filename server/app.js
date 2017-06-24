@@ -15,7 +15,10 @@ app.get("/fish", function(req, res) {
 	})
 });
 
-app.get("/fish/:index", function(req, res) {
+app.get("/fish/:id", function(req, res) {
+	Fish.findById(req.params.id, function(err, fish) {
+		res.json(fish);
+	})
 });
 
 app.post("/fish", function(req, res) {
