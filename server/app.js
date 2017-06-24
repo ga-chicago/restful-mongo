@@ -28,10 +28,18 @@ app.post('/houses', function(request, response){
 })
 
 app.patch('/houses/:index', function(request,response){
+	
+	var data = request.body;
+	var index = request.params.index;
+	houses[index] = data;
 	response.json('success');
 })
 
 app.delete('/houses/:index', function(request, response){
+
+	var data = request.body;
+	var index = request.params.index;
+	houses.splice(index, 1);
 
 	response.json('success');
 })
