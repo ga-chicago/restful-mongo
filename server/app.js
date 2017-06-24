@@ -32,10 +32,21 @@ app.post("/fish", function(req, res) {
 	res.json(fish);
 });
 
-app.patch("/fish/:index", function(req, res) {
+app.patch("/fish/:id", function(req, res) {
+	Fish.findById(req.params.id, function(err, fish) {
+		fish.name = req.body.name || fish.name; // if the patch request was blank/undefined, revert back to the previous value
+		fish.size = req.body.size || fish.size;
+		fish.location = req.body.location || fish.location;
+		fish.haveCaught = req.body.haveCaught || fish.haveCaught;
+		fish.save();
+		res.json(fish);
+	});
 });
 
-app.delete("/fish/:index", function(req, res) {
+app.delete("/fish/:id", function(req, res) {
+	Fish.findByIdAndRemove(req.params.id, function(err, fish) { // found this function that does both at once
+		res.json("success");
+	});
 });
 
 server.listen(3000, function(){
