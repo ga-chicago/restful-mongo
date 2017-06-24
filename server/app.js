@@ -4,21 +4,26 @@ var server = require("http").createServer(app);
 var path = require('path');
 var bodyParser = require("body-parser");
 
+	// require('/db/db');
+
+var houses = [];
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', function(request, response){
-
+	response.send("hello");
 	console.log("hello");
 
 })
 
 app.post('/theNorth', function(request, response){
+	var houses = request.body.house
 	response.json('success');
 })
 
 app.patch('/theNorth/:index', function(request,response){
-	response.json('success').
+	response.json('success');
 })
 
 app.delete('/theNorth/:index', function(request, response){
