@@ -12,18 +12,30 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', function(request, response){
-	response.send("butt");
-	console.log("hello");
+	GotHouse.find(function(err, house){
+		var allHouses = {house: house};
+		response.send(allHouses);
+
+	})
+	
 })
 
 app.get('/houses', function(request, response){
-	response.json(houses);
-	console.log("booty");
+	//return all houses
+	GotHouse.find(function(err, house){
+		response.json(house);
+		console.log(house);
+	})
 })
 
 app.get('/houses/:id', function(request, response){
-	response.json(houses);
-	console.log("booty");
+	
+	var id = request.params.id;
+	GotHouse.findById(id, function(err, house){
+	
+	response.json(house);
+	
+	})
 })
 
 app.post('/houses', function(request, response){
