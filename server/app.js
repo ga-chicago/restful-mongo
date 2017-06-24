@@ -12,21 +12,26 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', function(request, response){
-	response.send("hello");
+	response.send("butt");
 	console.log("hello");
-
 })
 
-app.post('/theNorth', function(request, response){
-	var houses = request.body.house
+app.get('/houses', function(request, response){
+	response.json(houses);
+	console.log("booty");
+})
+
+app.post('/houses', function(request, response){
+	var data = request.body;
+	houses.push(data);
 	response.json('success');
 })
 
-app.patch('/theNorth/:index', function(request,response){
+app.patch('/houses/:index', function(request,response){
 	response.json('success');
 })
 
-app.delete('/theNorth/:index', function(request, response){
+app.delete('/houses/:index', function(request, response){
 
 	response.json('success');
 })
