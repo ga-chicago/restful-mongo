@@ -43,10 +43,18 @@ app.post('/houses', function(request, response){
 
 app.patch('/houses/:id', function(request,response){
 	
-	var data = request.body;
-	var index = request.params.index;
-	houses[index] = data;
-	response.json('success');
+	var id = request.params.id;
+	GotHouse.findById(id, function(err, house){
+		house.name = request.body.name;
+		house.region = request.body.region;
+		house.words = request.body.words;
+		house.sigil = request.body.sigil;
+		house.hasDragons = request.body.hasDragons;
+
+		house.save();
+
+		response.json(house);
+	})
 })
 
 app.delete('/houses/:id', function(request, response){
