@@ -3,10 +3,10 @@ var app = express();
 var server = require("http").createServer(app);
 var path = require('path');
 var bodyParser = require("body-parser");
+var GotHouse = require('./models/Houses');
 
-	// require('/db/db');
+	require('./db/db');
 
-var houses = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
@@ -21,10 +21,24 @@ app.get('/houses', function(request, response){
 	console.log("booty");
 })
 
+app.get('/houses/:id', function(request, response){
+	response.json(houses);
+	console.log("booty");
+})
+
 app.post('/houses', function(request, response){
-	var data = request.body;
-	houses.push(data);
-	response.json('success');
+	console.log(request.body);
+
+	var house = new GotHouse({
+		name: request.body.name,
+		region: request.body.region,
+		words: request.body.words,
+		sigil: request.body.sigil,
+		hasDragons: request.body.hasDragons})
+
+	house.save();
+	response.send("success");
+
 })
 
 app.patch('/houses/:index', function(request,response){
