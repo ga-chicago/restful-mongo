@@ -10,8 +10,23 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get('/', function(request, response){
 
 	console.log("hello");
-	
+
 })
+
+app.post('/theNorth', function(request, response){
+	response.json('success');
+})
+
+app.patch('/theNorth/:index', function(request,response){
+	response.json('success').
+})
+
+app.delete('/theNorth/:index', function(request, response){
+
+	response.json('success');
+})
+
+
 
 server.listen(3000, function(){
 	console.log("listening on port 3000");
