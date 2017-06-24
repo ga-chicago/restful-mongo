@@ -9,9 +9,9 @@ require("./db/db");
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get("/fishes", function(req, res) {
-	Fish.find(function(err, fishes) {
-		res.json(fishes);
+app.get("/fish", function(req, res) {
+	Fish.find(function(err, fish) {
+		res.json(fish);
 	})
 });
 
