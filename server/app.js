@@ -17,7 +17,7 @@ app.set('view engine', 'hbs');
 app.get('/', function(request, response){
 	GotHouse.find(function(err, house){
 		var allHouses = {house: house};
-		response.render('home');
+		response.render('home', allHouses);
 
 	})
 	
