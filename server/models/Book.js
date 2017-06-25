@@ -4,7 +4,7 @@ var BookSchema = new mongoose.Schema({
     about: String,
     numberOfPages: Number,
     author: String,
-    datePublished: Number
+    datePublished: Number,
     genre: String
 })
 
