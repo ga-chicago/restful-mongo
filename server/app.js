@@ -9,6 +9,7 @@ var express = require('express'),
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs')
 
@@ -39,10 +40,10 @@ app.get('/books/:id', function(req, res){
 app.post('/books', function(req, res){
     console.log(req.body);
 var book = new Book ({name: req.body.name,
-               type: req.body.type,
-               region: req.body.region,
-               vintage: req.body.vintage,
-               organic: req.body.organic})
+               author: req.body.author,
+               numberOfPages: req.body.numberOfPages,
+               genre: req.body.genre,
+               datePublished: req.body.datePublished})
     book.save();
     res.send('success');
 })
@@ -51,10 +52,10 @@ app.patch('/books/:id', function(req, res){
     var id = req.params.id;
     Book.findById(id, function(err, book){
         book.name = req.body.name;
-        book.type = req.body.type;
-        book.region = req.body.region;
-        book.vintage = req.body.vintage;
-        book.organic = req.body.organic;
+        book.author = req.body.author;
+        book.numberOfPages = req.body.numberOfPages;
+        book.genre = req.body.genre;
+        book.datePublished = req.body.datePublished;
         book.save();
         res.json(book);
     })
