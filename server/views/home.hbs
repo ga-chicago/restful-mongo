@@ -1,0 +1,33 @@
+<h1>Game Of Thrones</h1>
+
+<div id="inputs">
+	<input id="name" placeholder="house name"/>
+	<input id="region" placeholder="region"/>
+	<input id="words" placeholder="words"/>
+	<input id="sigil" placeholder="sigil"/>
+	<input id="hasDragons" placeholder="hasDragons"/>
+	<button id="submit">submit</button>
+</div>
+
+
+{{#each house}}
+
+<div id="data">
+	<div>
+		name: {{this.name}}
+	</div>
+	<div>
+		region: {{this.region}}
+	</div>
+	<div>
+		words: {{this.words}}
+	</div>
+	<div>
+		sigil: {{this.sigil}}
+	</div>
+	<div>
+		Dragons?: {{this.hasDragons}}
+	</div>
+	<button id="{{this._id}}" class="delete">delete</button>
+</div>
+{{/each}}
