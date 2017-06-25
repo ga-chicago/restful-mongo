@@ -24,3 +24,14 @@ $('#submit').on('click', function(){
 		}
 	});
 });
+
+$('.delete').on('click', function(){
+	var id = $(this).attr('id');
+	$.ajax({
+		method:"DELETE",
+		url: "http://localhost:3000/houses/" + id,
+		success: function(response){
+			window.location.reload();
+		}
+	})
+})
