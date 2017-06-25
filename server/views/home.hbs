@@ -1,0 +1,50 @@
+<h1>Welcome to Gilmore Grocery</h1>
+
+<input id='name' placeholder='Name' />
+<input id='type' placeholder='Type' />
+<input id='cost' placeholder='Cost' />
+<input id='organic' placeholder='Organic' />
+<button id='submit'>Submit</button><br/><br/>
+
+<table>
+	<tr>
+		<td>
+			Name 
+		</td>
+		<td>
+			Type
+		</td>
+		<td>
+			Cost
+		</td>
+		<td>
+			Organic
+		</td>
+	</tr>
+	{{#each restaurant}}
+			<tr>
+
+		<td>
+			{{ this.name }}
+		</td>
+		<td>
+			{{ this.type }}
+		</td>
+		<td>
+			{{ this.cost }}
+		</td>
+		<td>
+			{{ this.organic }}
+		</td>
+		
+		<td>
+			<button>Edit</button>
+		</td>
+		<td>
+			<button id={{this._id}} class='delete'>Delete</button>
+		</td>
+		</tr>
+	{{/each}}
+	
+
+</table>
