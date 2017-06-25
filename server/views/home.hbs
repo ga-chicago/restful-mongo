@@ -1,1 +1,25 @@
 <h1>Welcome to RESTful Books</h1>
+
+<h2>Here are our excellent books:</h2><br>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Author</td>
+        <td>Number of Pages</td>
+        <td>Genre</td>
+        <td>Date Published</td>
+    </tr>
+    {{#each books}}
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.author}}</td>
+        <td>{{this.numberOfPages}}</td>
+        <td>{{this.genre}}</td>
+        <td>{{this.datePublished}}</td>
+        <td><button type="button" name="button">Edit</button></td>
+        <td><button id={{this._id}} class="delete">Delete</button></td>
+    </tr>
+    {{/each}}
+
+</table>

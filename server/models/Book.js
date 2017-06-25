@@ -3,9 +3,9 @@ var mongoose = require('mongoose')
 var BookSchema = new mongoose.Schema({
     about: String,
     numberOfPages: Number,
-    author: String,
     datePublished: Number,
-    genre: String
+    genre: String,
+    name: String
 })
 
 var bookModel = mongoose.model('Book', BookSchema);
