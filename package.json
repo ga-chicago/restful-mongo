@@ -18,6 +18,11 @@
   "homepage": "https://github.com/dcadyjr/restful-mongo#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "gulp-less": "^3.3.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11"
   }
 }

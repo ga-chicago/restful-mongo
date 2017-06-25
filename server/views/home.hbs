@@ -1,33 +1,35 @@
 <h1>Game Of Thrones</h1>
 
-<input id="name" placeholder="name"/>
-<input id="region" placeholder="region"/>
-<input id="words" placeholder="words"/>
-<input id="sigil" placeholder="sigil"/>
-<input id="hasDragons" placeholder="hasDragons"/>
-<button id="submit">submit</button>
+<div id="inputs">
+	<input id="name" placeholder="name"/>
+	<input id="region" placeholder="region"/>
+	<input id="words" placeholder="words"/>
+	<input id="sigil" placeholder="sigil"/>
+	<input id="hasDragons" placeholder="hasDragons"/>
+	<button id="submit">submit</button>
+</div>
 
-<div>
-	<div>
+<div id="titles">
+	<div class="titleData">
 		NAME
 	</div>
-	<div>
+	<div class="titleData">
 		REGION
 	</div>
-	<div>
+	<div class="titleData">
 		WORDS
 	</div>
-	<div>
+	<div class="titleData">
 		SIGIL
 	</div>
-	<div>
+	<div class="titleData">
 		HAS DRAGONS?
 	</div>
 </div>
 
 {{#each house}}
 
-<div>
+<div id="data">
 	<div>
 		{{this.name}}
 	</div>

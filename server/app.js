@@ -18,9 +18,7 @@ app.get('/', function(request, response){
 	GotHouse.find(function(err, house){
 		var allHouses = {house: house};
 		response.render('home', allHouses);
-
-	})
-	
+	})	
 })
 
 app.get('/houses', function(request, response){
@@ -80,8 +78,6 @@ app.delete('/houses/:id', function(request, response){
 		response.json('success');
 	})
 })
-
-
 
 server.listen(3000, function(){
 	console.log("listening on port 3000");
