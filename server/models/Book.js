@@ -1,11 +1,11 @@
 var mongoose = require('mongoose')
 
 var BookSchema = new mongoose.Schema({
-    about: String,
+    name: String,
+    author: String,
     numberOfPages: Number,
-    datePublished: Number,
     genre: String,
-    name: String
+    datePublished: Number
 })
 
 var bookModel = mongoose.model('Book', BookSchema);
