@@ -5,7 +5,9 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	Restaurant 	= require('./models/Restaurant.js');
 
-
+app.get('/test', function(request, response){
+    response.send('testing 123');
+})
 
 
 //fire up server
