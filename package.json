@@ -1,0 +1,28 @@
+{
+  "name": "restful-mongo",
+  "version": "1.0.0",
+  "description": "Create a RESTful API that CRUDs information to a MongoDB.",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ga-chicago/restful-mongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ga-chicago/restful-mongo/issues"
+  },
+  "homepage": "https://github.com/ga-chicago/restful-mongo#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.11.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "hbs-cli": "^1.1.0"
+  }
+}
