@@ -1,3 +1,3 @@
-## RESTful Mongo
+## RESTful API
 
-Create a RESTful API that CRUDs information to a MongoDB.
+Create a RESTful API for an object of your choice.
