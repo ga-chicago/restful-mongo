@@ -1,0 +1,47 @@
+<h1>Game Of Thrones</h1>
+
+<input id="name" placeholder="name"/>
+<input id="region" placeholder="region"/>
+<input id="words" placeholder="words"/>
+<input id="sigil" placeholder="sigil"/>
+<input id="hasDragons" placeholder="hasDragons"/>
+<button id="submit">submit</button>
+
+<div>
+	<div>
+		NAME
+	</div>
+	<div>
+		REGION
+	</div>
+	<div>
+		WORDS
+	</div>
+	<div>
+		SIGIL
+	</div>
+	<div>
+		HAS DRAGONS?
+	</div>
+</div>
+
+{{#each house}}
+
+<div>
+	<div>
+		{{this.name}}
+	</div>
+	<div>
+		{{this.region}}
+	</div>
+	<div>
+		{{this.words}}
+	</div>
+	<div>
+		{{this.sigil}}
+	</div>
+	<div>
+		{{this.hasDragons}}
+	</div>
+</div>
+{{/each}}

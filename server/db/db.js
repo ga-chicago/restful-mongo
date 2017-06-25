@@ -15,4 +15,4 @@ mongoose.connection.on('disconnected', function(){
 	console.log("Mongoose disconnected from" + connectionString);
 })
 
-console.log('hello');
+// console.log('hello');

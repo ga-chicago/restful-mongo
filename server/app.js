@@ -11,10 +11,13 @@ var GotHouse = require('./models/Houses');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.set('views', path.join(__dirname, "views"));
+app.set('view engine', 'hbs');
+
 app.get('/', function(request, response){
 	GotHouse.find(function(err, house){
 		var allHouses = {house: house};
-		response.send(allHouses);
+		response.render('home');
 
 	})
 	
