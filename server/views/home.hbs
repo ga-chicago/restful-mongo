@@ -1,9 +1,9 @@
-<h1>Welcome to Gilmore Grocery</h1>
+<h1>Summatime Sushi</h1>
 
 <input id='name' placeholder='Name' />
 <input id='type' placeholder='Type' />
+<input id='vegetarian' placeholder='Vegetarian' />
 <input id='cost' placeholder='Cost' />
-<input id='organic' placeholder='Organic' />
 <button id='submit'>Submit</button><br/><br/>
 
 <table>
@@ -15,13 +15,13 @@
 			Type
 		</td>
 		<td>
-			Cost
+			Vegetarian
 		</td>
 		<td>
-			Organic
+			Cost
 		</td>
 	</tr>
-	{{#each restaurant}}
+	{{#each sushi}}
 			<tr>
 
 		<td>
@@ -31,10 +31,10 @@
 			{{ this.type }}
 		</td>
 		<td>
-			{{ this.cost }}
+			{{ this.vegetarian }}
 		</td>
 		<td>
-			{{ this.organic }}
+			{{ this.cost }}
 		</td>
 		
 		<td>
