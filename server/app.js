@@ -32,7 +32,7 @@ app.get('/sushi', function(request, response){
 	
 
 
-// //get 2 sushi by id
+//get 2 sushi by id
 app.get('/sushi/:id', function(request, response){
      //return a specific sushi roll by id
      var id = request.params.id;
@@ -41,7 +41,7 @@ app.get('/sushi/:id', function(request, response){
      })
  })
 
-// //post /sushi --> use ajax function to actually post it
+//post /sushi --> use ajax function to actually post it
 app.post('/sushi', function(request, response){
       //create a new sushi from the request body
       console.log(request.body)
@@ -55,33 +55,33 @@ app.post('/sushi', function(request, response){
      
 })
 
-// // //patch /wines/:id
-// app.patch('/sushi/:id', function(request, response){
-//       //update sushi id with the request body
-//       var id = request.params.id;
-//       Sushi.findById(id, function(err, sushiRoll){
-//       	sushi.name = request.body.name;
-// 		sushi.type = request.body.type;
-// 		sushi.vegetarian = request.body.vegetarian;
-// 		sushi.cost = request.body.cost;
-//       })
+//patch /sushi/:id
+app.patch('/sushi/:id', function(request, response){
+      //update sushi id with the request body
+      var id = request.params.id;
+      Sushi.findById(id, function(err, sushiRoll){
+      	sushi.name = request.body.name;
+		sushi.type = request.body.type;
+		sushi.vegetarian = request.body.vegetarian;
+		sushi.cost = request.body.cost;
+      })
 
-//       sushi.save();
+      sushi.save();
 
-//       response.json(sushi);
+      response.json(sushi);
 
-// })
+})
 
-// // //delete /sushi/:id
-// app.delete('/sushi/:id', function(request, response){
-//       //delete the sushi by id
-//       var id = request.params.id;
-//       Sushi.findById(id, function(err, sushiRoll){
-//       	sushi.remove();
-//       	response.json('success');
-//       })
+//delete /sushi/:id
+app.delete('/sushi/:id', function(request, response){
+      //delete the sushi by id
+      var id = request.params.id;
+      Sushi.findById(id, function(err, sushiRoll){
+      	sushi.remove();
+      	response.json('success');
+      })
 
-// })
+})
 
 
 //fire up server
