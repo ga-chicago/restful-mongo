@@ -8,6 +8,8 @@ var express = require('express'),
 
 var sushi = [];
 
+require('./db/db.js');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -31,13 +33,13 @@ app.get('/sushi', function(request, response){
 
 
 // //get 2 sushi by id
-// app.get('/sushi/:id', function(request, response){
-//      //return a specific sushi roll by id
-//      var id = request.params.id;
-//      Sushi.findById(id, function(err, sushiRoll){
-//      	response.json(sushi);
-//      })
-//  })
+app.get('/sushi/:id', function(request, response){
+     //return a specific sushi roll by id
+     var id = request.params.id;
+     Sushi.findById(id, function(err, sushi){
+     	response.json(sushi);
+     })
+ })
 
 // //post /sushi --> use ajax function to actually post it
 app.post('/sushi', function(request, response){
