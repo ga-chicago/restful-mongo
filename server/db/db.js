@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-var connectionString = "mongodb://localhost/sushi";
+var connectionString = 'mongodb://localhost/sushi';
 
-console.log('hello'); 
 
 mongoose.connect(connectionString);
 
@@ -16,5 +15,3 @@ mongoose.connection.on('error', function(error){
 mongoose.connection.on('disconnected', function(){
 	console.log("Mongoose disconnected from" + connectionString);
 })
-
-console.log('hello'); 
