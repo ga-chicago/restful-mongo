@@ -1,0 +1,50 @@
+<h1>Summatime Sushi</h1>
+
+<input id='name' placeholder='Name' />
+<input id='type' placeholder='Type' />
+<input id='vegetarian' placeholder='Vegetarian' />
+<input id='cost' placeholder='Cost' />
+<button id='submit'>Submit</button><br/><br/>
+
+<table>
+	<tr>
+		<td>
+			Name 
+		</td>
+		<td>
+			Type
+		</td>
+		<td>
+			Vegetarian
+		</td>
+		<td>
+			Cost
+		</td>
+	</tr>
+	{{#each sushi}}
+			<tr>
+
+		<td>
+			{{ this.name }}
+		</td>
+		<td>
+			{{ this.type }}
+		</td>
+		<td>
+			{{ this.vegetarian }}
+		</td>
+		<td>
+			{{ this.cost }}
+		</td>
+		
+		<td>
+			<button>Edit</button>
+		</td>
+		<td>
+			<button id={{this._id}} class='delete'>Delete</button>
+		</td>
+		</tr>
+	{{/each}}
+	
+
+</table>
