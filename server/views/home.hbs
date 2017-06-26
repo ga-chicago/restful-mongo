@@ -1,0 +1,46 @@
+<h1>This is the customer database</h1>
+
+<table>
+	<tr>
+		<td>
+		Name
+		</td>
+		<td>
+		Date
+		</td>
+		<td>
+		Item
+		</td>
+		<td>
+		Amount
+		</td>
+		<td>
+		Member
+		</td>
+	</tr>
+{{#each purchases}}
+	<tr>
+		<td>
+		{{this.name}}
+		</td>
+		<td>
+		{{this.date}}
+		</td>
+		<td>
+		{{this.item}}
+		</td>
+		<td>
+		{{this.amount}}
+		</td>
+		<td>
+		{{this.member}}
+		</td>
+		<td>
+		<button id="{{this.id}}" class='delete'>Edit</edit>
+		</td>
+		<td>
+		<button>Edit</delete>
+	</tr>
+{{/each}}
+
+</table>
